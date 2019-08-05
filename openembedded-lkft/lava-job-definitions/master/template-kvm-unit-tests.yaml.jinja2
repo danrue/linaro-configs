@@ -21,5 +21,15 @@
       name: kvm-unit-tests
       parameters:
         SKIP_INSTALL: 'true'
+
+        # Example usage, using a git hash:
+        GIT_REF: 40f559bc572e355cadef513ec41fe114e9a8394e
+
+        # Example usage, using a git branch:
+        #GIT_REF: master
+
+        # Example usage, using a git tag:
+        #GIT_REF: v1.0
+
         SMP: {% if DEVICE_TYPE == "juno-r2" %}'false'{% else %}'true'{% endif %}
 {% endblock test_target %}
